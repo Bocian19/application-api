@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table style="border: 1px solid">
+    <tr>
+        <th>Autor postu</th><th>Tytyuł postu</th><th>Treść</th>
+    </tr>
+{% for post in posts %}
+    <tr><td>{{ post.authorName }}</td><td>{{ post.title }}</td><td>{{ post.body }}</td><td><a href="delete/{{ post.id }}">Usuń</a></td></tr>
+    {% endfor %}
+    </table>
+
+
+{% endblock %}
